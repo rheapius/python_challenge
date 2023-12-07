@@ -3,6 +3,7 @@ import csv
 
 pypoll= os.path.join('/users/rheapius/python_challenge/pypoll/resources/election_data.csv')
 
+#variables for storing data from rows
 Voters= []
 Candidates=[]      
 
@@ -13,6 +14,8 @@ with open(pypoll, 'r') as csvfile:
         Voters.append(row[0])
         if row[2] not in Candidates:
             Candidates.append(row[2])
+
+#assigning formulas for output
 
     total_votes= int(len(Voters))
     Candidates_names= str(Candidates)
@@ -26,6 +29,8 @@ output= (
         )
 
 print(output)
+
+#exporting to text file
 
 results= os.path.join('/users/rheapius/python_challenge/pypoll/analysis/results.txt')
 
